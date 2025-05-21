@@ -11,7 +11,7 @@
 .size-converter h2 {
   color: #23374D;
   margin: 8px 0 16px;
-  text-align: center;
+  text-align: left;
   font-family: var(--vinted-font);
   font-weight: 600;
   font-size: 20px;
@@ -399,8 +399,18 @@ select:focus {
 }
 
 .size-info {
-  gap: 4px;
-  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.market-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+  text-align: left;
 }
 
 .size-info p {
@@ -426,6 +436,7 @@ select:focus {
   justify-content: center;
   border-radius: 50%;
   transition: all 0.2s ease;
+  margin-left: auto;
 }
 
 .rotate-size-button:hover {
@@ -440,14 +451,29 @@ select:focus {
 }
 
 .delete-button {
-  padding: 6px 12px;
-  min-width: 70px;
-  font-size: 12px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  color: #999;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.2s ease;
+  line-height: 1;
+  z-index: 1;
 }
 
 .delete-button:hover {
-  opacity: 1;
-  background-color: #ff7875;
+  color: #ff4d4f;
+  background-color: rgba(255, 77, 79, 0.1);
 }
 
 .profile-name-group {
@@ -473,7 +499,7 @@ select:focus {
 }
 
 .profile-name {
-  text-align: center;
+  text-align: left;
   font-size: 1.2rem;
   color: #23374D;
   margin-bottom: 1.5rem;
@@ -495,15 +521,17 @@ select:focus {
 .saved-profiles h3 {
   color: #23374D;
   margin-bottom: 12px;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
 }
 
 .profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 12px;
   padding: 0 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .profile-card {
@@ -514,14 +542,32 @@ select:focus {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 140px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.profile-top-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.profile-bottom-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0;
 }
 
 .profile-header {
+  min-width: 100px;
+  flex-shrink: 0;
+  padding-right: 16px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4px;
+  gap: 8px;
 }
 
 .profile-header h4 {
@@ -529,29 +575,44 @@ select:focus {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.gender-badge {
-  width: 20px;
-  height: 20px;
-  font-size: 14px;
+.profile-header .gender-icon {
+  width: 16px;
+  height: 16px;
+  color: #666;
+  flex-shrink: 0;
 }
 
 .profile-measurements {
-  padding: 8px;
-  gap: 4px;
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
 }
 
 .measurement {
-  min-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 80px;
+  flex-shrink: 0;
 }
 
 .measurement .label {
   font-size: 12px;
+  color: #666;
+  white-space: nowrap;
 }
 
 .measurement .value {
-  font-size: 12px;
+  font-size: 14px;
+  color: #23374D;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .size-table {
@@ -574,18 +635,13 @@ select:focus {
   color: #666;
 }
 
-.market-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  text-align: left;
-  flex: 1;
-}
-
 .market-label {
   color: #666;
   font-size: 12px;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .size-value {
@@ -593,6 +649,7 @@ select:focus {
   color: #09B1BA;
   font-weight: 600;
   margin: 0;
+  white-space: nowrap;
 }
 
 .override-note {

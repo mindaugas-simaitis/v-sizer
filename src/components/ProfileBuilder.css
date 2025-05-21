@@ -370,17 +370,26 @@
 }
 
 .profiles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .profile-card {
   background-color: white;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s ease;
   border: 2px solid var(--vinted-gray-light);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 12px;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
 }
 
 .profile-card:hover {
@@ -388,48 +397,61 @@
   border-color: var(--vinted-primary);
 }
 
-.profile-card-header {
-  background-color: var(--vinted-primary);
-  color: white;
-  padding: 1rem;
+.profile-info {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  padding-right: 32px; /* Make space for delete button */
 }
 
-.profile-card-header h4 {
+.profile-info h4 {
+  min-width: 100px;
   margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
+  color: var(--vinted-primary);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
-.delete-profile {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0;
+.profile-info p {
+  margin: 0;
+  color: var(--vinted-text);
+  font-size: 14px;
+  min-width: 80px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.delete-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
   width: 24px;
   height: 24px;
+  background-color: transparent;
+  color: #999;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 12px;
-  transition: background-color 0.2s ease;
+  padding: 0;
+  transition: all 0.2s ease;
+  line-height: 1;
+  z-index: 1;
 }
 
-.delete-profile:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.profile-card-body {
-  padding: 1rem;
-}
-
-.profile-card-body p {
-  margin: 0.5rem 0;
-  color: var(--vinted-text);
+.delete-button:hover {
+  color: #ff4d4f;
+  background-color: rgba(255, 77, 79, 0.1);
 }
 
 /* Update navigation buttons */

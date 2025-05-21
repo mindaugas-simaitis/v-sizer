@@ -237,23 +237,43 @@ const ProfileBuilder: React.FC = () => {
         <h3>Saved Profiles</h3>
         {profiles.map((profile) => (
           <div key={profile.id} className='profile-card'>
-            <div className='profile-info'>
-              <h4>{profile.name}</h4>
-              <p>
-                Height: {profile.measurements.height}
-                {profile.measurements.heightUnit}
-              </p>
-              <p>
-                Weight: {profile.measurements.weight}
-                {profile.measurements.weightUnit}
-              </p>
-              <p>Size: {profile.selectedSize.descriptive}</p>
+            <div className='profile-top-row'>
+              <div className='profile-header'>
+                <h4>{profile.name}</h4>
+              </div>
+              <div className='profile-measurements'>
+                <div className='measurement'>
+                  <span className='label'>Height:</span>
+                  <span className='value'>
+                    {profile.measurements.height}
+                    {profile.measurements.heightUnit}
+                  </span>
+                </div>
+                <div className='measurement'>
+                  <span className='label'>Weight:</span>
+                  <span className='value'>
+                    {profile.measurements.weight}
+                    {profile.measurements.weightUnit}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className='profile-bottom-row'>
+              <div className='size-info'>
+                <div className='market-info'>
+                  <span className='market-label'>Size</span>
+                  <span className='size-value'>
+                    {profile.selectedSize.descriptive}
+                  </span>
+                </div>
+              </div>
             </div>
             <button
               className='delete-button'
               onClick={() => deleteProfile(profile.id)}
+              title='Delete profile'
             >
-              Delete
+              ×
             </button>
           </div>
         ))}
