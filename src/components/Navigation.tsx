@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from './Logo';
 import './Navigation.css';
 
 const Navigation: React.FC = () => {
@@ -9,8 +8,6 @@ const Navigation: React.FC = () => {
   return (
     <nav className='navigation'>
       <div className='nav-left'>
-        <Logo className='nav-logo' />
-        <div className='nav-divider' />
         <div className='nav-brand'>Size Guide</div>
       </div>
       <div className='nav-links'>

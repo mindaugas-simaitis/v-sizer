@@ -35,7 +35,7 @@ A modern clothing size conversion tool built with React, inspired by Vinted's de
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YourUsername/v-sizer.git
+git clone https://github.com/mindaugas-simaitis/v-sizer.git
 cd v-sizer
 ```
 

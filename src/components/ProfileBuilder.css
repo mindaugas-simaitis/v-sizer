@@ -123,10 +123,11 @@
 .input-with-unit {
   display: flex;
   gap: 0.5rem;
+  align-items: flex-start;
 }
 
-.input-with-unit input,
-.input-with-unit select {
+.input-with-unit input {
+  flex: 1;
   padding: 0.875rem;
   border: 2px solid var(--vinted-gray-light);
   border-radius: 4px;
@@ -134,18 +135,11 @@
   transition: all 0.2s ease;
 }
 
-.input-with-unit input {
-  flex: 1;
-}
-
-.input-with-unit select {
+.input-with-unit .vinted-dropdown {
   width: 100px;
-  background-color: white;
-  cursor: pointer;
 }
 
-.input-with-unit input:focus,
-.input-with-unit select:focus {
+.input-with-unit input:focus {
   outline: none;
   border-color: var(--vinted-primary);
 }

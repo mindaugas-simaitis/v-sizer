@@ -1,0 +1,143 @@
+.vinted-dropdown {
+  position: relative;
+  width: 100%;
+  font-family: var(--vinted-font);
+}
+
+.vinted-dropdown-button {
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  background: #FFFFFF;
+  border: 2px solid #EAEAEA;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.vinted-dropdown-button:hover {
+  border-color: #999;
+}
+
+.vinted-dropdown-button.expanded {
+  border-color: #09B1BA;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.dropdown-label {
+  color: #666;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.dropdown-label:empty {
+  display: none;
+  margin: 0;
+}
+
+.selected-value {
+  color: #23374D;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.dropdown-arrow {
+  color: #666;
+  transition: transform 0.2s ease;
+  margin-left: 8px;
+}
+
+.expanded .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #FFFFFF;
+  border: 1px solid #09B1BA;
+  border-top: none;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-option {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #23374D;
+  font-family: inherit;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  height: 40px;
+  box-sizing: border-box;
+}
+
+.dropdown-option:hover {
+  background-color: #F5F5F5;
+}
+
+.dropdown-option.selected {
+  background-color: #F0FAFB;
+  color: #09B1BA;
+  font-weight: 500;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #09B1BA;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-inner {
+  width: 12px;
+  height: 12px;
+  background-color: #09B1BA;
+  border-radius: 2px;
+}
+
+/* Scrollbar styling */
+.dropdown-options::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dropdown-options::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb {
+  background: #DDD;
+  border-radius: 4px;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb:hover {
+  background: #CCC;
+} 

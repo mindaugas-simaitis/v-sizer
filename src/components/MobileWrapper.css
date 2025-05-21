@@ -1,0 +1,258 @@
+.mobile-wrapper-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.mobile-device {
+  width: 375px;
+  height: 812px;
+  background-color: white;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border: 12px solid #000;
+  border-bottom-width: 16px;
+  border-top-width: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile-notch-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 34px;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.mobile-notch {
+  width: 180px;
+  height: 34px;
+  background-color: #000;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notch-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notch-camera {
+  width: 12px;
+  height: 12px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+}
+
+.notch-speaker {
+  width: 40px;
+  height: 4px;
+  background-color: #1a1a1a;
+  border-radius: 2px;
+}
+
+.mobile-status-bar {
+  height: 36px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  z-index: 90;
+}
+
+.status-left .time {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.status-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.signal-icon {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 12px;
+}
+
+.signal-bar {
+  width: 3px;
+  background-color: #000;
+  border-radius: 1px;
+}
+
+.signal-bar:nth-child(1) { height: 4px; }
+.signal-bar:nth-child(2) { height: 6px; }
+.signal-bar:nth-child(3) { height: 8px; }
+.signal-bar:nth-child(4) { height: 10px; }
+
+.wifi-icon {
+  position: relative;
+  width: 15px;
+  height: 12px;
+}
+
+.wifi-circle {
+  position: absolute;
+  border: 2px solid #000;
+  border-radius: 50%;
+}
+
+.wifi-circle:nth-child(1) {
+  width: 4px;
+  height: 4px;
+  bottom: 0;
+  left: 5.5px;
+}
+
+.wifi-circle:nth-child(2) {
+  width: 8px;
+  height: 8px;
+  bottom: -2px;
+  left: 3.5px;
+  border-bottom: transparent;
+}
+
+.wifi-circle:nth-child(3) {
+  width: 12px;
+  height: 12px;
+  bottom: -4px;
+  left: 1.5px;
+  border-bottom: transparent;
+}
+
+.battery-icon {
+  width: 24px;
+  height: 12px;
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 1px;
+}
+
+.battery-level {
+  height: 100%;
+  width: 60%;
+  background-color: #000;
+  border-radius: 1px;
+}
+
+.mobile-content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  height: calc(100% - 86px); /* Account for status bar and bottom nav */
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.mobile-nav {
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #eee;
+  background-color: white;
+  padding: 0 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: #666;
+  font-size: 11px;
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-item.active {
+  color: #09B1BA;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Custom scrollbar for the content area */
+.mobile-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mobile-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+/* Remove padding from direct children since we're adding it to mobile-content */
+.mobile-content > * {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Add responsive scaling for smaller screens */
+@media (max-width: 400px) {
+  .mobile-device {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+    transform: none;
+  }
+  
+  .mobile-wrapper-container {
+    padding: 0;
+    height: 100vh;
+  }
+
+  .mobile-content {
+    height: calc(100vh - 86px);
+  }
+}
+
+@media (max-height: 850px) and (min-width: 401px) {
+  .mobile-device {
+    transform: scale(0.95);
+    transform-origin: center center;
+  }
+}
+
+@media (max-height: 750px) and (min-width: 401px) {
+  .mobile-device {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+} 

@@ -1,10 +1,47 @@
 /* App.css */
 
+@font-face {
+  font-family: 'V-Inter';
+  src: url('https://marketplace-web-assets.vinted.com/_next/static/media/82416101390aeef4-s.p.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'V-Inter';
+  src: url('https://marketplace-web-assets.vinted.com/_next/static/media/82416101390aeef4-s.p.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'V-Inter';
+  src: url('https://marketplace-web-assets.vinted.com/_next/static/media/82416101390aeef4-s.p.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --vinted-font: 'V-Inter', 'V_INTER', 'V_INTER Fallback', 'Helvetica Neue', 'Helvetica-Neue', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--vinted-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .App {
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 20px;
+  font-family: var(--vinted-font);
 }
 
 .App-header {
@@ -16,6 +53,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: var(--vinted-font);
 }
 
 .lego-head {

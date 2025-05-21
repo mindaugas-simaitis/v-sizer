@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { sizeData, SizeMapping } from '../data/sizingData';
 import { Profile } from '../types/profile';
+import VintedDropdown from './VintedDropdown';
 import './ProfileBuilder.css';
 
 interface FormData {
@@ -102,16 +103,19 @@ const ProfileBuilder: React.FC = () => {
 
         <div className='form-group'>
           <label htmlFor='gender'>Gender:</label>
-          <select
-            id='gender'
-            name='gender'
+          <VintedDropdown
+            label='Select Gender'
+            options={[
+              { label: 'Women', value: 'women' },
+              { label: 'Men', value: 'men' },
+            ]}
             value={formData.gender}
-            onChange={handleInputChange}
-            required
-          >
-            <option value='women'>Women</option>
-            <option value='men'>Men</option>
-          </select>
+            onChange={(value) =>
+              handleInputChange({
+                target: { name: 'gender', value: value.toString() },
+              } as any)
+            }
+          />
         </div>
 
         <div className='measurements-group'>
@@ -126,14 +130,19 @@ const ProfileBuilder: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <select
-                name='heightUnit'
+              <VintedDropdown
+                label='Unit'
+                options={[
+                  { label: 'cm', value: 'cm' },
+                  { label: 'ft', value: 'ft' },
+                ]}
                 value={formData.heightUnit}
-                onChange={handleInputChange}
-              >
-                <option value='cm'>cm</option>
-                <option value='ft'>ft</option>
-              </select>
+                onChange={(value) =>
+                  handleInputChange({
+                    target: { name: 'heightUnit', value: value.toString() },
+                  } as any)
+                }
+              />
             </div>
           </div>
 
@@ -148,14 +157,19 @@ const ProfileBuilder: React.FC = () => {
                 onChange={handleInputChange}
                 required
               />
-              <select
-                name='weightUnit'
+              <VintedDropdown
+                label='Unit'
+                options={[
+                  { label: 'kg', value: 'kg' },
+                  { label: 'lbs', value: 'lbs' },
+                ]}
                 value={formData.weightUnit}
-                onChange={handleInputChange}
-              >
-                <option value='kg'>kg</option>
-                <option value='lbs'>lbs</option>
-              </select>
+                onChange={(value) =>
+                  handleInputChange({
+                    target: { name: 'weightUnit', value: value.toString() },
+                  } as any)
+                }
+              />
             </div>
           </div>
         </div>
