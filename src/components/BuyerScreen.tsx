@@ -71,15 +71,13 @@ const BuyerScreen: React.FC = () => {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    if (x >= 280 && x <= 340 && y >= 100 && y <= 140) {
+    if (x >= 20 && x <= 80 && y >= 400 && y <= 440) {
+      handleSizeGuideClick();
+    } else {
       setState((prev: ProfileState) => ({
         ...prev,
         showDropdown: !prev.showDropdown,
       }));
-    } else if (x >= 20 && x <= 80 && y >= 400 && y <= 440) {
-      handleSizeGuideClick();
-    } else if (state.showDropdown) {
-      setState((prev: ProfileState) => ({ ...prev, showDropdown: false }));
     }
   };
 
