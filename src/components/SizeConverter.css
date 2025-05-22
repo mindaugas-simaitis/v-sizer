@@ -176,11 +176,11 @@ select:focus {
 
 .profile-name {
   display: flex;
+  padding-top: 30px;
   align-items: center;
   justify-content: space-between;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid #E5E5E5;
 }
 
 .profile-name .value {
