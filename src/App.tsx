@@ -1,9 +1,11 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProfileScreen from './components/ProfileScreen';
 import SizeConverter from './components/SizeConverter';
 import MobileWrapper from './components/MobileWrapper';
+import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className='App'>
       <img
@@ -12,10 +14,15 @@ function App() {
         className='corner-logo'
       />
       <MobileWrapper>
-        <SizeConverter />
+        <Router>
+          <Routes>
+            <Route path='/' element={<ProfileScreen />} />
+            <Route path='/v-sizer' element={<SizeConverter />} />
+          </Routes>
+        </Router>
       </MobileWrapper>
     </div>
   );
-}
+};
 
 export default App;
