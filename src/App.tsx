@@ -2,7 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProfileScreen from './components/ProfileScreen';
 import SizeConverter from './components/SizeConverter';
+import BuyerScreen from './components/BuyerScreen';
 import MobileWrapper from './components/MobileWrapper';
+import TopNavigation from './components/TopNavigation';
 import './App.css';
 
 const App: React.FC = () => {
@@ -13,14 +15,17 @@ const App: React.FC = () => {
         alt='Vinted'
         className='corner-logo'
       />
-      <MobileWrapper>
-        <Router>
+      <Router>
+        <TopNavigation />
+        <MobileWrapper>
           <Routes>
             <Route path='/' element={<ProfileScreen />} />
             <Route path='/v-sizer' element={<SizeConverter />} />
+            <Route path='/settings' element={<ProfileScreen />} />
+            <Route path='/shop' element={<BuyerScreen />} />
           </Routes>
-        </Router>
-      </MobileWrapper>
+        </MobileWrapper>
+      </Router>
     </div>
   );
 };
